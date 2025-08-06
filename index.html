@@ -7,105 +7,130 @@
   <title>Cardápio Interativo com Promoção</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: #f9f9f9;
-      color: #222;
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding-bottom: 5rem;
-    }
-    header {
-      background: #003049;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header img {
-      max-height: 80px;
-      margin-bottom: 1rem;
-    }
-    nav {
-      background: #fff;
-      text-align: center;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #003049;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem;
-    }
-    .search {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    .search input {
-      padding: 0.6rem;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    .promo {
-      background: #fff8dc;
-      border: 1px solid #ffe58f;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      text-align: center;
-    }
-    .promo h2 {
-      color: #d62828;
-      margin-bottom: 0.5rem;
-    }
-    .promo strong {
-      color: #003049;
-    }
-    .categoria {
-      margin-top: 2rem;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-    .categoria h2 {
-      color: #d62828;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.4rem;
-    }
-    .item {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem 0;
-      border-bottom: 1px dashed #ccc;
-    }
-    .item-preco {
-      color: #2a9d8f;
-      font-weight: bold;
-    }
-    .toggle-mode {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      background: #003049;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-  </style>
+  body {
+    background: #f9f9f9;
+    color: #222;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding-bottom: 5rem;
+  }
+
+  header {
+    background: #003049;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  header img {
+    max-height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  nav {
+    background: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #003049;
+    font-weight: bold;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .search {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .search input {
+    padding: 0.6rem;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  .promo {
+    background: #fff8dc;
+    border: 1px solid #ffe58f;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .promo h2 {
+    color: #d62828;
+    margin-bottom: 0.5rem;
+  }
+
+  .promo strong {
+    color: #003049;
+  }
+
+  .categoria {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .categoria h2 {
+    color: #d62828;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.4rem;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #ccc;
+  }
+
+  .item span:first-child {
+    flex: 1;
+    padding-right: 1rem;
+    word-break: break-word;
+  }
+
+  .item-preco {
+    white-space: nowrap;
+    color: #2a9d8f;
+    font-weight: bold;
+    min-width: 70px;
+    text-align: right;
+  }
+
+  .toggle-mode {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #003049;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+</style>
+
 </head>
 <body>
   <header>
