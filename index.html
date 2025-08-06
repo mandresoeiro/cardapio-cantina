@@ -1,148 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cardápio Interativo com Promoção</title>
+  <title>Cardápio Interativo</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
- body {
-    background: #f9f9f9;
-    color: #222;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding-bottom: 5rem;
-  }
+    :root {
+      --cor-principal: #8b2323;
+      --cor-secundaria: #003049;
+      --cor-fundo: #f9f9f9;
+      --cor-texto: #222;
+      --cor-promo: #fff8dc;
+      --cor-borda-promo: #ffe58f;
+      --cor-preco: #2a9d8f;
+      --cinza-claro: #ccc;
+      --cinza-texto: #999;
+    }
 
+    body {
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding-bottom: 5rem;
+    }
 
-  header {
-  background: #962d2d; /* vermelho escuro da imagem */
-  color: #fff;         /* mantém o texto branco para contraste */
-  padding: 2rem 1rem;
-  text-align: center;
-}
+    header {
+      background: var(--cor-principal);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-  header img {
-    max-height: 80px;
-    margin-bottom: 1rem;
-  }
+    header img {
+      max-height: 80px;
+      margin-bottom: 1rem;
+    }
 
-  nav {
-    background: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+    nav {
+      background: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-  nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #003049;
-    font-weight: bold;
-  }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--cor-secundaria);
+      font-weight: bold;
+    }
 
-  .container {
-    max-width: 960px;
-    margin: auto;
-    padding: 1rem;
-  }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
 
-  .search {
-    text-align: center;
-    margin: 1rem 0;
-  }
+    .search {
+      text-align: center;
+      margin: 1rem 0;
+    }
 
-  .search input {
-    padding: 0.6rem;
-    width: 80%;
-    max-width: 400px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
+    .search input {
+      padding: 0.6rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid var(--cinza-claro);
+    }
 
-  .promo {
-    background: #fff8dc;
-    border: 1px solid #ffe58f;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    text-align: center;
-  }
+    .promo {
+      background: var(--cor-promo);
+      border: 1px solid var(--cor-borda-promo);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-align: center;
+    }
 
-  .promo h2 {
-    color: #d62828;
-    margin-bottom: 0.5rem;
-  }
+    .promo h2 {
+      color: var(--cor-principal);
+      margin-bottom: 0.5rem;
+    }
 
-  .promo strong {
-    color: #003049;
-  }
+    .promo strong {
+      color: var(--cor-secundaria);
+    }
 
-  .categoria {
-    margin-top: 2rem;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-  }
+    .categoria {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
 
-  .categoria h2 {
-    color: #d62828;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.4rem;
-  }
+    .categoria h2 {
+      color: var(--cor-principal);
+      font-size: 1.5rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.4rem;
+    }
 
-  .item {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed #ccc;
-  }
+    .item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--cinza-claro);
+    }
 
-  .item span:first-child {
-    flex: 1;
-    padding-right: 1rem;
-    word-break: break-word;
-  }
+    .item span:first-child {
+      flex: 1;
+      padding-right: 1rem;
+      word-break: break-word;
+    }
 
-  .item-preco {
-    white-space: nowrap;
-    color: #2a9d8f;
-    font-weight: bold;
-    min-width: 70px;
-    text-align: right;
-  }
+    .item-preco {
+      white-space: nowrap;
+      color: var(--cor-preco);
+      font-weight: bold;
+      min-width: 70px;
+      text-align: right;
+    }
 
-  .toggle-mode {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background: #003049;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-</style>
+    .toggle-mode {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--cor-secundaria);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
 
+    /* Modo escuro (simples) */
+    body.dark {
+      background: #1e1e1e;
+      color: #f9f9f9;
+    }
+
+    body.dark header,
+    body.dark nav {
+      background: #111;
+      color: #fff;
+    }
+
+    body.dark .categoria,
+    body.dark .promo {
+      background: #2a2a2a;
+      color: #f0f0f0;
+    }
+
+    body.dark .item-preco {
+      color: #81ecec;
+    }
+
+    body.dark .promo strong {
+      color: #ffeaa7;
+    }
+
+    body.dark .promo h2,
+    body.dark .categoria h2 {
+      color: #ff7675;
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <img src="LOGO2.svg" alt="Logo">
     <h1>🍽 Cardápio Interativo</h1>
     <p>Clique nas seções ou busque por nome</p>
   </header>
-<!-- <div class="banner">
-  <img src="banner-curso1.jpg" alt="Curso Técnico" style="width:100%;max-height:160px;border-radius:12px;margin:10px 0;">
-  <img src="banner-curso2.jpg" alt="Vestibular" style="width:100%;max-height:160px;border-radius:12px;margin:10px 0;">
-</div> -->
 
   <nav>
     <a href="#bebidas">Bebidas</a>
@@ -157,17 +195,18 @@
       <input type="text" id="busca" placeholder="🔍 Buscar item...">
     </div>
 
-    <!-- PROMO_START -->
-<div class="promo">
-  <h2>📚 Enigma do Dia</h2>
-  <p><strong>Deixe sua resposta no balcão e concorra a um misto especial do Seu Reginaldo!</strong></p>
-  <p><em>
-    Assim como Dantès, no clássico <strong>O Conde de Monte Cristo</strong>, há forças que permanecem ocultas, em silêncio, esperando o momento exato para agir.<br>
-    Em Química, que tipo de energia faz isso?
-  </em></p>
-  <p style="font-size:0.8rem;color:#999;"><em>A resposta certa pode te libertar... ou alimentar.</em></p>
-</div>
-<!-- PROMO_END -->
+    <div class="promo">
+      <h2>📚 Enigma do Dia</h2>
+      <p><strong>Deixe sua resposta no balcão e concorra a um misto especial do Seu Reginaldo!</strong></p>
+      <p><em>
+        Assim como Dantès, no clássico <strong>O Conde de Monte Cristo</strong>, há forças que permanecem ocultas, em silêncio, esperando o momento exato para agir.<br>
+        Em Química, que tipo de energia faz isso?
+      </em></p>
+      <p style="font-size:0.8rem;color:var(--cinza-texto);"><em>A resposta certa pode te libertar... ou alimentar.</em></p>
+    </div>
+
+    <!-- Categorias continuam aqui… -->
+
 
     <section class="categoria" id="bebidas">
 <h2>🥤 Bebidas / Comidas</h2>
@@ -205,7 +244,7 @@
 <div class="item"><span>MINI FINI</span><span class="item-preco">R$ 1,50</span></div>
 <div class="item"><span>PIRULITO POP</span><span class="item-preco">R$ 0,50</span></div>
 <div class="item"><span>BALA DE CAFÉ (4 por 1 real)</span><span class="item-preco">R$ 0,30</span></div>
-<div class="item"><span>BISCOITO Prestígio e Nescau</span><span class="item-preco">R$ 6,00</span></div>
+<div class="item"><span>BISCOITO Prestígio e Nescal</span><span class="item-preco">R$ 6,00</span></div>
 </section>
 <section class="categoria" id="lanches">
 <h2>🍔 Lanches Quentes</h2>
