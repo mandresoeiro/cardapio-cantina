@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Interativo com Promoção</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f9f9f9;
+      color: #222;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding-bottom: 5rem;
+    }
+    header {
+      background: #003049;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      max-height: 80px;
+      margin-bottom: 1rem;
+    }
+    nav {
+      background: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #003049;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .search {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .search input {
+      padding: 0.6rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .promo {
+      background: #fff8dc;
+      border: 1px solid #ffe58f;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .promo h2 {
+      color: #d62828;
+      margin-bottom: 0.5rem;
+    }
+    .promo strong {
+      color: #003049;
+    }
+    .categoria {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .categoria h2 {
+      color: #d62828;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.4rem;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed #ccc;
+    }
+    .item-preco {
+      color: #2a9d8f;
+      font-weight: bold;
+    }
+    .toggle-mode {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: #003049;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="LOGO.png" alt="Logo">
+    <h1>🍽 Cardápio Interativo</h1>
+    <p>Clique nas seções ou busque por nome</p>
+  </header>
+<!-- <div class="banner">
+  <img src="banner-curso1.jpg" alt="Curso Técnico" style="width:100%;max-height:160px;border-radius:12px;margin:10px 0;">
+  <img src="banner-curso2.jpg" alt="Vestibular" style="width:100%;max-height:160px;border-radius:12px;margin:10px 0;">
+</div> -->
+
+  <nav>
+    <a href="#bebidas">Bebidas</a>
+    <a href="#bombons">Bombons</a>
+    <a href="#lanches">Lanches</a>
+    <a href="#salgadinhos">Salgadinhos</a>
+    <a href="#outros">Outros</a>
+  </nav>
+
+  <div class="container">
+    <div class="search">
+      <input type="text" id="busca" placeholder="🔍 Buscar item...">
+    </div>
+
+    <!-- PROMO_START -->
+<div class="promo">
+      <h2>⚡ Promoção Relâmpago</h2>
+      <p><strong>Muita calma nessa hora!</strong> de <del>R$ 8,00</del> por <span style="color:#2a9d8f;font-weight:bold;">R$ 6,00</span> até às 14h!</p>
+      <p style="font-size:0.85rem;color:#666;">* Promoção válida apenas hoje</p>
+    </div>
+<!-- PROMO_END -->
+
+    <section class="categoria" id="bebidas">
+<h2>🥤 Bebidas / Comidas</h2>
+<div class="item"><span>YoPRO ou CAPPUCCINO POWER WHEY</span><span class="item-preco">R$ 12,00</span></div>
+<div class="item"><span>RED BULL</span><span class="item-preco">R$ 13,00</span></div>
+<div class="item"><span>MONSTER</span><span class="item-preco">R$ 14,00</span></div>
+<div class="item"><span>CAPPUCCINO CLASSIC, CAPPUCCINO CHOCOLATE E PINGADO</span><span class="item-preco">R$ 10,00</span></div>
+<div class="item"><span>DEL VALLE LATA (290 mL) Uva ou Pêssego</span><span class="item-preco">R$ 6,00</span></div>
+<div class="item"><span>DEL VALLE GARRAFA (450 mL) Uva</span><span class="item-preco">R$ 5,00</span></div>
+<div class="item"><span>REFRIGERANTE LATA (350 mL) – qualquer sabor</span><span class="item-preco">R$ 4,50</span></div>
+<div class="item"><span>NESCAU CAIXINHA (180 mL)</span><span class="item-preco">R$ 4,00</span></div>
+<div class="item"><span>CAFÉ C/ LEITE ou NESCAU QUENTE</span><span class="item-preco">R$ 4,00</span></div>
+<div class="item"><span>CAFÉ PRETO</span><span class="item-preco">R$ 3,00</span></div>
+<div class="item"><span>ÁGUA MINERAL (500 mL)</span><span class="item-preco">R$ 3,00</span></div>
+<div class="item"><span>ÁGUA MINERAL (330 mL)</span><span class="item-preco">R$ 2,50</span></div>
+<div class="item"><span>REFRIGERANTE GARRAFA (200 mL)</span><span class="item-preco">R$ 3,50</span></div>
+<div class="item"><span>CHÁ GELADO (200 mL) Pêssego</span><span class="item-preco">R$ 3,50</span></div>
+</section>
+<section class="categoria" id="bombons">
+<h2>🍫 Biscoitos e Bombons</h2>
+<div class="item"><span>FINI</span><span class="item-preco">R$ 9,00</span></div>
+<div class="item"><span>RECHEADINHO BAUDUCO</span><span class="item-preco">R$ 6,00</span></div>
+<div class="item"><span>BONO ou NEGRESCO</span><span class="item-preco">R$ 5,00</span></div>
+<div class="item"><span>KITKAT</span><span class="item-preco">R$ 5,00</span></div>
+<div class="item"><span>TWIX E SNICKER</span><span class="item-preco">R$ 6,00</span></div>
+<div class="item"><span>TICTAC</span><span class="item-preco">R$ 3,50</span></div>
+<div class="item"><span>BOLINHO BAUDUCO</span><span class="item-preco">R$ 3,50</span></div>
+<div class="item"><span>TRIDENT (168g)</span><span class="item-preco">R$ 3,50</span></div>
+<div class="item"><span>CLUB SOCIAL (original ou integral)</span><span class="item-preco">R$ 1,50</span></div>
+<div class="item"><span>CLUB SOCIAL (recheado)</span><span class="item-preco">R$ 2,50</span></div>
+<div class="item"><span>NUTRY CEREAL</span><span class="item-preco">R$ 2,50</span></div>
+<div class="item"><span>BARRINHA BAUDUCO</span><span class="item-preco">R$ 2,50</span></div>
+<div class="item"><span>HALLS</span><span class="item-preco">R$ 2,50</span></div>
+<div class="item"><span>CHOCOLATES PEQUENOS</span><span class="item-preco">R$ 3,00</span></div>
+<div class="item"><span>MINI FINI</span><span class="item-preco">R$ 1,50</span></div>
+<div class="item"><span>PIRULITO POP</span><span class="item-preco">R$ 0,50</span></div>
+<div class="item"><span>BALA DE CAFÉ (4 por 1 real)</span><span class="item-preco">R$ 0,30</span></div>
+<div class="item"><span>BISCOITO Prestígio e Nescal</span><span class="item-preco">R$ 6,00</span></div>
+</section>
+<section class="categoria" id="lanches">
+<h2>🍔 Lanches Quentes</h2>
+<div class="item"><span>Mc MÁRITON BACON</span><span class="item-preco">R$ 18,00</span></div>
+<div class="item"><span>Mc MÁRITON CLÁSSICO</span><span class="item-preco">R$ 15,00</span></div>
+<div class="item"><span>MISTO ou QUEIJO QUENTE</span><span class="item-preco">R$ 8,00</span></div>
+<div class="item"><span>PÃO FRANCÊS com manteiga</span><span class="item-preco">R$ 5,00</span></div>
+<div class="item"><span>TORTA SALGADA</span><span class="item-preco">R$ 13,00</span></div>
+<div class="item"><span>Pão de Queijo com Catupiry</span><span class="item-preco">R$ 6,00</span></div>
+<div class="item"><span>SANDUÍCHE NATURAL</span><span class="item-preco">R$ 8,00</span></div>
+</section>
+<section class="categoria" id="salgadinhos">
+<h2>🍿 Salgadinhos</h2>
+<div class="item"><span>PRINGLES (114g)</span><span class="item-preco">R$ 17,00</span></div>
+<div class="item"><span>SENSAÇÕES (40g)</span><span class="item-preco">R$ 10,00</span></div>
+<div class="item"><span>DORITOS (45g)</span><span class="item-preco">R$ 8,00</span></div>
+<div class="item"><span>RUFFLES (40g)</span><span class="item-preco">R$ 8,00</span></div>
+<div class="item"><span>EQUILIBRI</span><span class="item-preco">R$ 7,50</span></div>
+<div class="item"><span>PIPOCA DE MICROONDAS (100g)</span><span class="item-preco">R$ 7,00</span></div>
+<div class="item"><span>PIPOCA DE MICROONDAS (50g)</span><span class="item-preco">R$ 5,00</span></div>
+<div class="item"><span>CHEETOS (45g)</span><span class="item-preco">R$ 6,00</span></div>
+<div class="item"><span>FANDANGOS (45g)</span><span class="item-preco">R$ 5,00</span></div>
+<div class="item"><span>SKILHOS HILÉIA (30g)</span><span class="item-preco">R$ 2,00</span></div>
+<div class="item"><span>PIPOCA PANTERA (15g)</span><span class="item-preco">R$ 1,00</span></div>
+</section>
+<section class="categoria" id="outros">
+<h2>🧂 Outros</h2>
+<div class="item"><span>TALHER DESCARTÁVEL</span><span class="item-preco">R$ 1,00</span></div>
+</section>
+
+  </div>
+  <button class="toggle-mode" onclick="document.body.classList.toggle('dark')">🌓</button>
+  <script>
+    document.getElementById("busca").addEventListener("input", function() {
+      const termo = this.value.toLowerCase();
+      document.querySelectorAll(".item").forEach(item => {
+        const texto = item.textContent.toLowerCase();
+        item.style.display = texto.includes(termo) ? "flex" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
